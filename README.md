@@ -29,3 +29,6 @@ crontab -e
 1. Set up your Kindle to pull a web site every minute (out of scope of this project).
 2. Point your Kindle etc. to `http://myserver.com/weather.php`
 
+> If yuo have a way to get your device's battery level, you can pass it to the server to display the battery:
+>
+> `http://myserver.com/weather.php?battery=50`
