@@ -1,5 +1,7 @@
 <?php
 
+$ACCUWEATHER_API_KEY = ""
+
 function get_forecast() { //{{{
    
 $myfile = fopen("forecast.txt", "r") or die("Unable to open file!");
@@ -26,7 +28,7 @@ function pull_current_conditions() { //{{{
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://dataservice.accuweather.com/currentconditions/v1/40817_PC?apikey=OdGxShqDVsSWG9uvGkFgbDG9y5peKMMD",
+  CURLOPT_URL => "http://dataservice.accuweather.com/currentconditions/v1/40817_PC?apikey=" + $ACCUWEATHER_API_KEY,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -53,7 +55,7 @@ function pull_forecast()  //{{{
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/40817_PC?apikey=OdGxShqDVsSWG9uvGkFgbDG9y5peKMMD&details=true",
+  CURLOPT_URL => "http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/40817_PC?details=true&apikey=" + $ACCUWEATHER_API_KEY,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
