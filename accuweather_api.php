@@ -77,7 +77,7 @@ function pull_forecast()  //{{{
 
 	$old_response = json_decode($old_response, true);  
 	$response = json_decode($response, true);
-	if(is_array($old_response)) {
+	if(is_array($old_response) && sizeof($old_response) > 1) {
 		array_unshift($old_response[0], $response);
 	}
 

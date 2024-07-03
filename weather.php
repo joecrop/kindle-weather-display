@@ -108,6 +108,7 @@ try
    $headerFontSize = GetBestFontSize($time, $todaysConditionsWidth - $sideMargins, 0);
    date_default_timezone_set('America/Los_Angeles');
    $text = date('g:i A');
+   $headerFontSize = 40;
    $box = imagettfbbox($headerFontSize, 0, $font, $text);
    $textHeight = BoxHeight($box);
    $bottom = $textHeight;
